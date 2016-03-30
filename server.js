@@ -1,24 +1,11 @@
 var express = require('express');
+var middleware = require('./middleware.js');
 var app = express();
 
 var PORT = 3000;
 
 // This is middleware definition
-var middleware = {
-	requireAuthentication:function(req,res,next){
 
-		console.log('Authenticated succesfully');
-		next();
-	},
-
-	logger : function(req,res,next){
-
-		console.log("Request :" + new Date().toString() + " " + req.originalUrl);
-
-		next();
-	}
-
-};
 
 app.use(express.static(__dirname+'/public'));
 
