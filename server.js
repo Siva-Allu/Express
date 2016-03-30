@@ -3,6 +3,7 @@ var app = express();
 
 var PORT = 3000;
 
+// This is middleware definition
 var middleware = {
 	requireAuthentication:function(req,res,next){
 
